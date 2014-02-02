@@ -2,17 +2,16 @@ package ejemplo.services;
 
 import org.springframework.data.domain.Page;
 
-/*import com.cenfotec.cenfoteca.contracts.UsersRequest;
-import com.cenfotec.cenfoteca.ejb.Usuario;*/
-
+import ejemplo.contracts.UserRequest;
+import ejemplo.ejb.Person;
 
 public interface UserServiceInterface {
 	
-	/*Page<Usuario> getAll(UsersRequest ur);
+	Page<Person> getAll(UserRequest ur);
 
-	Boolean saveUser(Usuario user);
+	Boolean saveUser(Person user);
 
-	Usuario getSessionUser(int idUser);*/
+	Person getSessionUser(int idUser);
 
 
 }

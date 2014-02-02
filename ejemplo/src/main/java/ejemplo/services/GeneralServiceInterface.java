@@ -2,13 +2,10 @@ package ejemplo.services;
 
 import java.util.List;
 
-/*import com.cenfotec.cenfoteca.ejb.TipoAlquiler;
-import com.cenfotec.cenfoteca.ejb.TipoUsuario;*/
+import ejemplo.ejb.Person;
 
 public interface GeneralServiceInterface {
 
-	/*List<TipoUsuario> getAllTipoUsuario();
-	TipoUsuario getTipoUsuarioById(Integer idTipoUsuario);
-	List<TipoAlquiler> getAllTipoAlquiler();
-	TipoAlquiler getTipoAlquilerById(Integer idTipoAlquiler);*/
+	List<Person> getAllTipoUsuario();
+	Person getTipoUsuarioById(Integer idTipoUsuario);
 }

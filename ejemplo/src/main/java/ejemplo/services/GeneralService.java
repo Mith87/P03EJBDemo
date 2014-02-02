@@ -5,44 +5,29 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-/*import com.cenfotec.cenfoteca.ejb.TipoAlquiler;
-import com.cenfotec.cenfoteca.ejb.TipoUsuario;
-import com.cenfotec.cenfoteca.repositories.GeneralRepository;
-import com.cenfotec.cenfoteca.repositories.TipoAlquilerRepository;
-import com.cenfotec.cenfoteca.repositories.TipoUsuarioRepository;*/
+import ejemplo.ejb.Person;
+import ejemplo.repositories.GeneralRepository;
+import ejemplo.repositories.UserRepository;
 import ejemplo.services.GeneralServiceInterface;
 
 
-/*@Service
+@Service
 public class GeneralService implements GeneralServiceInterface{		
 	
 	@Autowired
 	GeneralRepository generalRepository;
 	
 	@Autowired
-	TipoUsuarioRepository tipoUsuarioRepository;
+	UserRepository tipoUsuarioRepository;
 	
-	@Autowired
-	TipoAlquilerRepository tipoAlquilerRepository;
-
 	@Override
-	public List<TipoUsuario> getAllTipoUsuario() {
-		return tipoUsuarioRepository.findAll();
+	public List<Person> getAllTipoUsuario() {
+		return (List<Person>) tipoUsuarioRepository.findAll();
 	}
 
 	@Override
-	public TipoUsuario getTipoUsuarioById(Integer idTipoUsuario) {
+	public Person getTipoUsuarioById(Integer idTipoUsuario) {
 		return tipoUsuarioRepository.findOne(idTipoUsuario);
 	}
-
-	@Override
-	public List<TipoAlquiler> getAllTipoAlquiler() {
-		return tipoAlquilerRepository.findAll();
-	}
 	
-	@Override
-	public TipoAlquiler getTipoAlquilerById(Integer idTipoAlquiler) {
-		return tipoAlquilerRepository.findOne(idTipoAlquiler);
-	}
-	
-}*/
+}

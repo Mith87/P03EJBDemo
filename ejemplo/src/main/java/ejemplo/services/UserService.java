@@ -7,6 +7,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import ejemplo.contracts.UserRequest;
+import ejemplo.ejb.Person;
+import ejemplo.repositories.UserRepository;
 /*import com.cenfotec.cenfoteca.contracts.UsersRequest;
 import com.cenfotec.cenfoteca.ejb.Usuario;*/
 //import ejemplo.repositories.UserRepository;
@@ -20,12 +23,12 @@ import com.cenfotec.cenfoteca.repositories.UsersRepository;*/
 @Service
 public class UserService implements UserServiceInterface{
 
-	/*@Autowired
-	UserRepository usersRepository;
+	@Autowired
+	UserRepository userRepository;
 	
 	@Override
 	@Transactional
-	public Page<Usuario> getAll(UsersRequest ur) {
+	public Page<Person> getAll(UserRequest ur) {
 	
 		PageRequest pr;
 		Sort.Direction direction = Sort.Direction.DESC;
@@ -40,14 +43,10 @@ public class UserService implements UserServiceInterface{
 			pr = new PageRequest(ur.getPageNumber(),ur.getPageSize());
 		}
 		
-		Page<Usuario> result;
+		Page<Person> result;
 		
 		if(ur.getSearchColumn().toLowerCase().equals("all")){
 			result = userRepository.findAll(pr);
-		}else if(ur.getSearchColumn().toLowerCase().equals("firstname")){
-			result = userRepository.findByFirstnameContaining(ur.getSearchTerm(),pr);
-		} else if(ur.getSearchColumn().toLowerCase().equals("lastname")){
-			result = userRepository.findByLastnameContaining(ur.getSearchTerm(),pr);
 		}else{
 			result = userRepository.findAll(pr);
 		}
@@ -57,9 +56,9 @@ public class UserService implements UserServiceInterface{
 
 	@Override
 	@Transactional
-	public Boolean saveUser(Usuario user) {
+	public Boolean saveUser(Person user) {
 		
-		Usuario nuser = userRepository.save(user);
+		Person nuser = userRepository.save(user);
 	
 		Boolean result = true;
 		if(nuser == null){
@@ -70,7 +69,7 @@ public class UserService implements UserServiceInterface{
 	}
 
 	@Override
-	public Usuario getSessionUser(int idUser) {
+	public Person getSessionUser(int idUser) {
 		return userRepository.findOne(idUser);
-	}*/
+	}
 }
