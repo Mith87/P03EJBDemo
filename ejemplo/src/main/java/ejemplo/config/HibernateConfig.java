@@ -27,7 +27,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 public class HibernateConfig {
 	private String driverClassName = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/cenfotecadb";
+    private String url = "jdbc:mysql://localhost:3306/EJBBD";
     private String username = "root"; 
     private String password = "admin10";
     
@@ -90,7 +90,7 @@ public class HibernateConfig {
     @Autowired
     public SessionFactory getSessionFactory(EntityManagerFactory entityManagerFactory)
     {
-        return ((HibernateEntityManagerFactory)entityManagerFactory).getSessionFactory();
+        return ((HibernateEntityManagerFactory)entityManagerFactory).getSessionFactory ();
     }
 
 }
